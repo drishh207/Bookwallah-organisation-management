@@ -1,0 +1,129 @@
+
+mysql> select * from admin_login;
++-----------+----------+--------------+
+| username  | password | designation  |
++-----------+----------+--------------+
+| headlogin | 1234     | PROJECT HEAD |
+| hrlogin   | 1234     | HR           |
++-----------+----------+--------------+
+2 rows in set (0.03 sec)
+
+
+mysql> select * from volunteer_login;
++----------+----------+----------------+
+| username | password | volunteer_name |
++----------+----------+----------------+
+| vol1     | 4321     | volunteer1     |
+| vol10    | 1234     | volunteer10    |
+| vol2     | 1234     | Volunteer2     |
++----------+----------+----------------+
+3 rows in set (0.02 sec)
+
+mysql> select * from attendance;
++--------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+-----------+-----------+
+| student_name | Session_3 | Session_4 | Session_5 | Session_6 | Session_7 | Session_8 | Session_9 | Session_10 | Session_11 | Session_12 | Session_13 | Session_14 | Session_15 | Session_16 | Session_17 | Session_18 | Session_19 | Session_20 | Session_1 | Session_2 |
++--------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+-----------+-----------+
+| TOM          | NULL      | P1        | NULL      | P1        | P2        | NULL      | NULL      | NULL       | A1         | NULL       | NULL       | NULL       | NULL       | A1         | A1         | NULL       | NULL       | NULL       | NULL      | NULL      |
+| JACK         | P1        | NULL      | NULL      | A1        | NULL      | NULL      | NULL      | A1         | NULL       | NULL       | NULL       | NULL       | NULL       | NULL       | NULL       | A1         | A1         | NULL       | NULL      | NULL      |
+| AMY          | P2        | NULL      | A1        | P2        | NULL      | A1        | NULL      | A1         | A1         | A1         | A1         | P1         | NULL       | NULL       | A1         | A1         | A1         | P1         | P1        | P1        |
+| JAKE         | NULL      | P2        | NULL      | NULL      | NULL      | NULL      | A1        | NULL       | NULL       | NULL       | NULL       | NULL       | A1         | A1         | NULL       | A1         | NULL       | P2         | P2        | NULL      |
+| CHARLES      | P1        | A1        | NULL      | P1        | P1        | NULL      | NULL      | A1         | NULL       | P1         | NULL       | A1         | NULL       | A1         | A1         | A1         | NULL       | A1         | NULL      | A1        |
+| ROSA         | NULL      | NULL      | NULL      | NULL      | NULL      | NULL      | A1        | NULL       | A1         | P1         | NULL       | NULL       | NULL       | NULL       | A1         | NULL       | A1         | NULL       | P1        | NULL      |
+| TERRY        | NULL      | P1        | A1        | NULL      | P1        | A1        | NULL      | NULL       | A1         | NULL       | A1         | NULL       | A1         | A1         | NULL       | NULL       | A1         | P1         | NULL      | P1        |
+| JERRY        | A1        | NULL      | NULL      | NULL      | NULL      | NULL      | A1        | NULL       | NULL       | NULL       | NULL       | P1         | A1         | NULL       | NULL       | NULL       | NULL       | NULL       | A1        | NULL      |
+| JACOB        | NULL      | NULL      | A1        | NULL      | P1        | A1        | NULL      | NULL       | NULL       | NULL       | NULL       | P2         | NULL       | NULL       | NULL       | NULL       | NULL       | NULL       | NULL      | P2        |
+| JOHN         | NULL      | NULL      | NULL      | NULL      | NULL      | NULL      | NULL      | NULL       | NULL       | NULL       | A1         | NULL       | NULL       | NULL       | NULL       | NULL       | NULL       | NULL       | NULL      | NULL      |
++--------------+-----------+-----------+-----------+-----------+-----------+-----------+-----------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+------------+-----------+-----------+
+10 rows in set (0.03 sec)
+//ATTENDANCE TABLE INITIALLY HAS ONLY STUDENT NAME COLUMN. REST ALL ARE ADDED AUTOMATICALLY WHILE RUNNING THE PROJECT
+
+mysql> select * from basic;
++--------------------+------------+------------+
+| Value_of_the_month | start_date | end_date   |
++--------------------+------------+------------+
+| Bravery            | 2019-12-01 | 2019-12-31 |
+| Kindness           | 2020-01-01 | 2020-01-07 |
+| Kindness           | 2020-01-08 | 2020-01-15 |
++--------------------+------------+------------+
+3 rows in set (0.02 sec)
+
+
+mysql> select * from books;
++-----------+----------------+----------+
+| book_name | book_publisher | value    |
++-----------+----------------+----------+
+| book1     | publish1       | bravery  |
+| book2     | publish2       | bravery  |
+| book3     | publish3       | bravery  |
+| book4     | publish4       | bravery  |
+| book5     | publish5       | bravery  |
+| book6     | publish6       | honesty  |
+| book7     | publish7       | honesty  |
+| book8     | publish8       | honesty  |
+| book9     | publish9       | honesty  |
+| book10    | publish10      | honesty  |
+| book11    | publish11      | courage  |
+| book12    | publish12      | courage  |
+| book13    | publish13      | courage  |
+| book14    | publish14      | courage  |
+| book15    | publish15      | courage  |
+| Book16    | publisher16    | kindness |
+| Book10    | Publish10      | Kindness |
+| Book17    | Publish17      | Kindness |
+| Book19    | publish19      | Kindness |
++-----------+----------------+----------+
+19 rows in set (0.03 sec)
+
+
+mysql> select * from session_plan;
++----------------+--------------+--------------+----------+----------+-------+-------+-------+---------+---------------+
+| session_number | session_head | session_date | start_at | end_at   | book1 | book2 | book3 | status  | project_place |
++----------------+--------------+--------------+----------+----------+-------+-------+-------+---------+---------------+
+|              1 | volunteer1   | 2019-12-29   | 16:00:00 | 17:30:00 | book3 | book2 | book1 | success | Project 2     |
+|              2 | volunteer1   | 2019-12-29   | 13:15:00 | 14:30:00 | book1 | book2 | book3 | success | Project 2     |
+|              3 | volunteer1   | 2019-12-29   | 20:00:00 | 21:00:00 | book2 | book5 | book3 | NULL    | Project 2     |
+|              4 | volunteer1   | 2019-12-29   | 20:00:00 | 21:00:00 | book5 | book4 | book2 | NULL    | Project 2     |
+|              5 | volunteer10  | 2019-12-29   | 00:00:00 | 00:00:00 | book3 | book4 | book5 | NULL    | Project 3     |
+|              6 | volunteer1   | 2019-12-29   | 00:00:00 | 00:00:00 | book2 | book1 | book4 | success | Project 3     |
+|              7 | volunteer1   | 2019-12-29   | 18:00:00 | 19:00:00 | book2 | book1 | book4 | NULL    | Project 2     |
++----------------+--------------+--------------+----------+----------+-------+-------+-------+---------+---------------+
+
+
+
+mysql> select * from student;
++--------------+------+-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| student_name | age  | date_of_joining | comments                                                                                                                                                            |
++--------------+------+-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| JAKE         |   12 | 2015-02-27      | Very kind and helpful
+excells in exams well
+Respectful towards elders
+Gets very good grades
+
+Good in maths
+
+well behaved
+Good in English
+Well Behaved
+Well mannered |
+| AMY          |   13 | 2016-05-15      |
+Well behaved
+good in maths                                                                                                                                         |
+| CHARLES      |   12 | 2016-07-21      | NULL                                                                                                                                                                |
+|              |    0 | 2019-12-22      |                                                                                                                                                                     |
+| TOMMY        |   13 | 2019-12-28      | Good in maths                                                                                                                                                       |
+| RAY          |    5 | 2020-01-05      |                                                                                                                                                                     |
++--------------+------+-----------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+6 rows in set (0.07 sec)
+
+mysql> select * from volunteer_info;
++-------+------------+-------------+--------------------------+----------+--------------+
+| login | birth_day  | name        | working_institution_name | status   | joining_date |
++-------+------------+-------------+--------------------------+----------+--------------+
+| AA    | 1974-12-21 | A           | SIT                      | Inactive | NULL         |
+| BB    | 1974-12-20 | B           | SIT                      | Active   | NULL         |
+| CC    | 1974-12-19 | C           | SIT                      | Inactive | NULL         |
+| vol1  | 1990-05-26 | volunteer1  | BCD                      | Inactive | 2019-12-29   |
+| vol10 | 2019-01-18 | volunteer10 | SIT                      | Active   | 2019-12-18   |
+| vol2  | 2092-08-06 | Volunteer2  | GHY                      | Active   | 2019-12-06   |
++-------+------------+-------------+--------------------------+----------+--------------+
+6 rows in set (0.01 sec)
